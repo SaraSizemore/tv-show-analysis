@@ -1,0 +1,5 @@
+pandas
+flask
+jinja2
+pip
+numpy
