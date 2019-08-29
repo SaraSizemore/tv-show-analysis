@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TV Show Analysis</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='css/one-page-wonder.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Language Through TV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead text-center text-white">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Watch and Learn</h1>
+                <h2 class="masthead-subheading mb-0"></h2>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-3">
+                        <!----<img class="img-fluid" src="#" alt=""> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-3">
+                        <h2 class="display-4"></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <h2 class="display-6">Which TV show should young children watch?</h2>
+                <p>Every parent of a young child wonders which TV shows are best for the child to watch. As language
+                    development and literacy are
+                    one of the biggest predictors of success in school/life, many parents want to know which TV shows
+                    are the best for developing language</p>
+                <p>This page ranks popular children's TV programming available on Amazon Prime and Netflix by
+                    their ability to help aid
+                    in language development through metrics such as WPM and vocabulary. This page also allows you to
+                    explore metrics such as the words spoken (does the show use "cold" or "chilly" to
+                    refer to the weather?), the vocabulary development (does the show introduce new words frequently,
+                    AND repeat the new words enough times for children to learn through context clues?), and the words
+                    per minute (generally, the more words the better for literacy!)</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-3">
+                        <!----<img class="img-fluid" src="#" alt=""> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-3">
+                        <h2 class="display-4"></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <h2 class="display-6">Children's TV Shows Ranked</h2>
+                <p>This table allows you to view the most popular TV shows available on Netflix and Amazon Prime ranked
+                    in order of how likely these shows are to help expand children's vocabulary and aid in language
+                    development</p>
+                <p>If you want to view rankings of shows only available on Netflix (or alternatively, Amazon Prime), use
+                    the dropdown menu to view only these shows</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-1">
+                        <!----<img class="img-fluid" src="#" alt=""> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-1">
+                        <h2 class="display-4"></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <form action="/">
+                <select name="Select Provider">
+                    {% for show in show_provider %}
+                    {% if show == selected_provider %}
+                    <option selected value="{{ show }}">{{ show }}</option>
+                    {% else %}
+                    <option value="{{ show }}">{{ show }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Select Provider">
+            </form>
+        </div>
+        <p></p>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table id="dtBasicExample" class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope=" col">Rank</th>
+                            <th scope="col">Show</th>
+                            <th scope="col">Content Provider</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in shows %}
+                        <tr>
+                            <th>{{ s.index.rank }}</th>
+                            <td>{{ s.index.show }}</td>
+                            <td>{{ s.index.provider }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-4">
+                        <!----<img class="img-fluid" src="#" alt=""> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4">
+                        <h2 class="display-4"></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <h2 class="display-6">Want to explore further?</h2>
+                <p>Select a TV show from the drop down menu to explore metrics such as WPM and average runtime, and
+                    check out what words your child will learn!</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <form action="{{ url_for('show', show_name = name) }}">
+                <select name="Select Show">
+                    {% for name in show_names %}
+                    <option value="{{ name }}">{{ name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="View Show Data">
+            </form>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-4">
+                        <!----<img class="img-fluid" src="#" alt=""> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4">
+                        <h2 class="display-4"></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="m-0 text-center text-white small">Copyright &copy; Sara Sizemore 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script scr="{{url_for('static', filename='vendor/script.js') }}"></script>
+
+</body>
+
+</html>
