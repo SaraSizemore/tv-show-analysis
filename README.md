@@ -6,4 +6,4 @@ This repo contains all the HTML and CSS files needed for a project where subtitl
 
 ### What is in this repo?
 
-The actual python file that wraps the HTML/CSS in Flask is `tv_show_analysis.py`. The HTML files are in the `template` folder, and all the other files such as CSS, images, etc are in the `static`. The required dependencies are listed in `requirements.txt` and `Procfile` determines how the app is run.
+The actual python file that wraps the HTML/CSS in Flask is `app.py`. The HTML files are in the `template` folder, and all the other files such as CSS, images, etc are in the `static`. The required dependencies are listed in `requirements.txt` and `Procfile` determines how the app is run.
